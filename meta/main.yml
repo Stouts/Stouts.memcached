@@ -1,0 +1,25 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  author: klen
+  company: Stouts
+  description: Ansible role which manage memcached
+  license: MIT
+  platforms:
+  - name: RedHat
+    versions:
+    - all
+  - name: CentOS
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - web
+  - database

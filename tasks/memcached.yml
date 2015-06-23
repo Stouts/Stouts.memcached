@@ -1,0 +1,19 @@
+---
+
+- include: install.deb.yml
+  when: ansible_os_family == 'Debian'
+
+- include: install.yum.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Configure Memcached
+  template:
+    src: memcached.conf.j2
+    dest: /etc/memcached.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: memcached restart
+
+- name: Ensure Memcached is started
+  service: name=memcached state=started enabled=yes
